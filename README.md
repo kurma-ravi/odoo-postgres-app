@@ -17,23 +17,31 @@ The developed automated scripts in "github" will work on any Virtual Machine(Ubu
    3.1. Adding new network Adapter:
 	- On the Virtualbox go to "Settings->Network->Click on Adapter-2 -> Select Host-Only network"
 	- Click on "Advanced" and select "Allow VMS"
+   
    3.2. Now, restart your Virtual ubuntu box.
+   
    3.3 Login to virtual ubuntu box and goto "/etc/network/interfaces/" and change the file to the address to your base IP address, as below:
 	auto eth1
 	iface eth1 inet static
 	address 192.168.56.101
 	netmask 255.255.255.0
+   
    3.4 Restart your ubuntu box & Start ubuntu box from virtualbox
 	
 4. Now, Open command prompt on your windows local machine and run below commands:
-	C:\Vagrant\VMs\ubuntu>vagrant ssh
+	
+	#### C:\Vagrant\VMs\ubuntu>vagrant ssh
 5. This will connect to your ubuntu box from your windows machine with Static IP in your window ip-network.
 
 ## Odoo Application Setup Steps:
 1. Login to your VM/Cloud Instance.
-	1.1. Vagrant Box login Credentials, if logging in with Virtual box: root/vagran.
-	1.2. Vagrant Box login command, if logging in using localmachine Commandprompt: vagranth ssh
+     
+     1.1. Vagrant Box login Credentials, if logging in with Virtual box: root/vagran.
+     
+     1.2. Vagrant Box login command, if logging in using localmachine Commandprompt: vagranth ssh
+
 2. Once, you login to the VM, run the below commands to do the INITIAL-SETUP to create in our customized directory:
+
 	sudo su -
 	apt-get update -y
 	apt install git -y
