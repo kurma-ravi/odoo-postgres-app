@@ -73,7 +73,7 @@ The developed automated scripts in "github" will work on any Virtual Machine(Ubu
 
 ###### NOTE: Make sure, your docker network gateway is same nginx conf files. 
 
-#### Script/Code file definitions:
+## Script/Code file definitions:
 1. The below Playbook(YAML) will install docker and docker-compose on the server.
          	
 		docker-install-playbook.yml
