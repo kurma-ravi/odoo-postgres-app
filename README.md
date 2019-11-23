@@ -66,5 +66,6 @@ The developed automated scripts in "github" will work on any Virtual Machine(Ubu
 4. Finally, LAUNCH any web browser(IE, Chrome, Firefox etc) with VirtualMachine IP address(REVERSE-PROXY: without portno: in the url) as url below.
 	
 		http://<VirtualMachine IP Address>
+		example: http://192.168.56.101
 
 ###### NOTE: Make sure, your docker network gateway is same nginx conf files. 
