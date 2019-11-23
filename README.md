@@ -30,7 +30,7 @@ The developed automated scripts in "github" will work on any Virtual Machine(Ubu
 
 ## Odoo Application Setup Steps:
 1. Login to your VM/Cloud Instance.
-	1.1. Vagrant Box login Credentials, if logging in with Virtual box: root/vagrant
+	1.1. Vagrant Box login Credentials, if logging in with Virtual box: root/vagran.
 	1.2. Vagrant Box login command, if logging in using localmachine Commandprompt: vagranth ssh
 2. Once, you login to the VM, run the below commands to do the INITIAL-SETUP to create in our customized directory:
 	sudo su -
