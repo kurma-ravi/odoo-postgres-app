@@ -53,7 +53,7 @@ The developed automated scripts in "github" will work on any Virtual Machine(Ubu
 		git clone https://github.com/kurma-ravi/odoo-postgres-app.git /apps/odoo-postgres-app
 		chmod 777 /apps/odoo-postgres-app/*
 
-3. RUN the below command(s) on the terminal of the server, to perform & launch the odoo applicaton as per the requirement.
+3. RUN the below command(s) on the terminal of the server, to LAUNCH the odoo applicaton as per the requirement.
 	
 		cd /apps/odoo-postgres-app
 		./install-everything.sh
