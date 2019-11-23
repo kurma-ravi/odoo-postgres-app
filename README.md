@@ -13,9 +13,10 @@ The developed automated scripts in "github" will work on any Virtual Machine(Ubu
 1. Download Vagrant & Virtualbox and install them on your local machine.
 2. Create an Vagrant Box "Ubuntu/trusty64" & map it to any directory on your local machine(I used directory: C:/Vagrant/VMs/Ubuntu)
 3. To make your windows local machine to connect/ssh to virtual ubuntu box, you need to perform below steps:
-	3.1. Adding new network Adapter:
-			- On the Virtualbox go to "Settings->Network->Click on Adapter-2 -> Select Host-Only network"
-			- Click on "Advanced" and select "Allow VMS"
+   
+   3.1. Adding new network Adapter:
+		- On the Virtualbox go to "Settings->Network->Click on Adapter-2 -> Select Host-Only network"
+		- Click on "Advanced" and select "Allow VMS"
 	3.2. Now, restart your Virtual ubuntu box.
 	3.3 Login to virtual ubuntu box and goto "/etc/network/interfaces/" and change the file to the address to your base IP address, as below:
 		auto eth1
