@@ -17,13 +17,16 @@ The developed automated scripts in "github" will work on any Virtual Machine(Ubu
    	3.1. Adding new network Adapter:
 	     - On the Virtualbox go to "Settings->Network->Click on Adapter-2 -> Select Host-Only network"
 	     - Click on "Advanced" and select "Allow VMS".
+        
         3.2  Now, restart your Virtual ubuntu box.
-     	3.3 Login to virtual ubuntu box and goto "/etc/network/interfaces/" and change the file to the address to your base IP  address, as below:
+     	
+        3.3 Login to virtual ubuntu box and goto "/etc/network/interfaces/" and change the file to the address to your base IP  address, as below:
 	
 		auto eth1
 		iface eth1 inet static
 		address 192.168.56.101
 		netmask 255.255.255.0
+        
         3.4 Restart your ubuntu box & Start ubuntu box from virtualbox
 	
 4. Now, Open command prompt on your windows local machine and run below commands:
@@ -32,13 +35,13 @@ The developed automated scripts in "github" will work on any Virtual Machine(Ubu
 5. This will connect to your ubuntu box from your windows machine with Static IP in your window ip-network.
 
 ## Odoo Application Setup Steps:
-1. Login to your VM/Cloud Instance.
+1. Login to your Virtual Machine/Cloud Instance.
      
      	1.1. Vagrant Box login Credentials, if logging in with Virtual box: root/vagrant
      
      	1.2. Vagrant Box login command, if logging in using localmachine Commandprompt: vagrant ssh
 
-2. Once, you login to the VM, RUN the below commands on the terminal of the server to do the INITIAL-SETUP:
+2. Once, you login to the Virtual Machine, RUN the below commands on the terminal of the server to do the INITIAL-SETUP:
 
 		sudo su -
 		apt-get update -y
@@ -50,11 +53,11 @@ The developed automated scripts in "github" will work on any Virtual Machine(Ubu
 		git clone https://github.com/kurma-ravi/odoo-postgres-app.git /apps/odoo-postgres-app
 		chmod 777 /apps/odoo-postgres-app/*
 
-3. RUN the below command(s) on the terminal of the server to perform & launch the odoo applicaton as per the requirement.
+3. RUN the below command(s) on the terminal of the server, to perform & launch the odoo applicaton as per the requirement.
 	
 		cd /apps/odoo-postgres-app
 		./install-everything.sh
-4. Finally, Launch any web browser(IE, Chrome, Firefox etc) with VirtualMachine IP address(REVERSE-PROXY: without portno: in the url) as url below.
+4. Finally, LAUNCH any web browser(IE, Chrome, Firefox etc) with VirtualMachine IP address(REVERSE-PROXY: without portno: in the url) as url below.
 	
 		http://<VirtualMachine IP Address>
 
