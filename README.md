@@ -4,11 +4,17 @@
 Need to setup odoo application with postgres database on multiple odoo web(3 containers) and database(2 containers) with replication. Also, These web-containers has to be exposed through Nginx reverse-proxy.
 
 ### Pre-requisites:
-One Virtual Machine [OR] One Cloud Instance. Preferbly any UBUNTU machine
+One Virtual Machine [OR] One Cloud Instance. Preferably any UBUNTU machine
 
 ### Platform:
 The developed automated scripts in "github" will work on any Virtual Machine(Ubuntu)/Cloud Instance(Ubuntu).
 
+### TOOLS Used:
+	Ansible (Playbooks)
+	Docker
+	Docker-compose
+	Nginx
+	bash scripting
 ### Vagrant VM Setup Steps:
 1. Download Vagrant & Virtualbox and install them on your local machine.
 2. Create an Vagrant Box "Ubuntu/trusty64" & map it to any directory on your local machine( I used directory: C:/Vagrant/VMs/Ubuntu)
