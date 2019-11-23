@@ -15,15 +15,15 @@ The developed automated scripts in "github" will work on any Virtual Machine(Ubu
 3. To make your windows local machine to connect/ssh to virtual ubuntu box, you need to perform below steps:
    
    3.1. Adding new network Adapter:
-		- On the Virtualbox go to "Settings->Network->Click on Adapter-2 -> Select Host-Only network"
-		- Click on "Advanced" and select "Allow VMS"
-	3.2. Now, restart your Virtual ubuntu box.
-	3.3 Login to virtual ubuntu box and goto "/etc/network/interfaces/" and change the file to the address to your base IP address, as below:
-		auto eth1
-		iface eth1 inet static
-		address 192.168.56.101
-		netmask 255.255.255.0
-	3.4 Restart your ubuntu box & Start ubuntu box from virtualbox
+	- On the Virtualbox go to "Settings->Network->Click on Adapter-2 -> Select Host-Only network"
+	- Click on "Advanced" and select "Allow VMS"
+   3.2. Now, restart your Virtual ubuntu box.
+   3.3 Login to virtual ubuntu box and goto "/etc/network/interfaces/" and change the file to the address to your base IP address, as below:
+	auto eth1
+	iface eth1 inet static
+	address 192.168.56.101
+	netmask 255.255.255.0
+   3.4 Restart your ubuntu box & Start ubuntu box from virtualbox
 	
 4. Now, Open command prompt on your windows local machine and run below commands:
 	C:\Vagrant\VMs\ubuntu>vagrant ssh
