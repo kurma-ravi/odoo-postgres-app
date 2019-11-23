@@ -15,8 +15,8 @@ The developed automated scripts in "github" will work on any Virtual Machine(Ubu
 3. To make your windows local machine to connect/ssh to virtual ubuntu box, you need to perform below steps:
 
         3.1. Adding new network Adapter:
-	     - On the Virtualbox go to "Settings->Network->Click on Adapter-2 -> Select Host-Only network"
-	     - Click on "Advanced" and select "Allow VMS".
+	       - On the Virtualbox go to "Settings->Network->Click on Adapter-2 -> Select Host-Only network"
+	       - Click on "Advanced" and select "Allow VMS".
         
         3.2  Now, restart your Virtual ubuntu box.
      	
@@ -37,9 +37,9 @@ The developed automated scripts in "github" will work on any Virtual Machine(Ubu
 ## Odoo Application Setup Steps:
 1. Login to your Virtual Machine/Cloud Instance.
      
-     	1.1. Vagrant Box login Credentials, if logging in with Virtual box: root/vagrant
+     	1.1. Vagrant Box login Credentials, if logging in with Virtual box:   root/vagrant
      
-     	1.2. Vagrant Box login command, if logging in using localmachine Commandprompt: vagrant ssh
+     	1.2. Vagrant Box login command, if logging in using localmachine Command prompt:   vagrant ssh
 
 2. Once, you login to the Virtual Machine, RUN the below commands on the terminal of the server to do the INITIAL-SETUP:
 
