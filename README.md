@@ -22,13 +22,13 @@ The developed automated scripts in "github" will work on any Virtual Machine(Ubu
    
      3.3 Login to virtual ubuntu box and goto "/etc/network/interfaces/" and change the file to the address to your base IP  address, as below:
 	
-	auto eth1
+	##### auto eth1
 	
-	iface eth1 inet static
+	##### iface eth1 inet static
 	
-	address 192.168.56.101
+	##### address 192.168.56.101
 	
-	netmask 255.255.255.0
+	##### netmask 255.255.255.0
    
      3.4 Restart your ubuntu box & Start ubuntu box from virtualbox
 	
@@ -46,23 +46,23 @@ The developed automated scripts in "github" will work on any Virtual Machine(Ubu
 
 2. Once, you login to the VM, run the below commands to do the INITIAL-SETUP to create in our customized directory:
 
-	sudo su -
+		sudo su -
 	
-	apt-get update -y
+		apt-get update -y
 	
-	apt install git -y
+		apt install git -y
 	
-	cd /
+		cd /
 	
-	sudo mkdir -p /apps/odoo-postgres-app
+		sudo mkdir -p /apps/odoo-postgres-app
 	
-	chmod 777 /apps/odoo-postgres-app
+		chmod 777 /apps/odoo-postgres-app
 	
-	cd /apps/odoo-postgres-app
+		cd /apps/odoo-postgres-app
 	
-	git clone https://github.com/kurma-ravi/odoo-postgres-app.git /apps/odoo-postgres-app
+		git clone https://github.com/kurma-ravi/odoo-postgres-app.git /apps/odoo-postgres-app
 	
-	chmod 777 /apps/odoo-postgres-app/*
+		chmod 777 /apps/odoo-postgres-app/*
 
 3. Run the below command(s) to perform & launch the odoo applicaton as per the requirement.
 	
