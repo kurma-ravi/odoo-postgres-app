@@ -3,6 +3,9 @@
 ### Requirement:
 Need to setup odoo application with postgres database on multiple odoo web(3 containers) and database(2 containers) with replication. Also, These web-containers has to be exposed through Nginx reverse-proxy.
 
+### Explaination:
+The developed program will fulfil the given requirement. Up on running the code/scripts on the server/Virtual Machine, it automatically creates 5 docker containers 3-odoo & 2-postgres(with replication) and Nginx server which does reverse-proxy to all the 3 odoo containers.
+
 ### Pre-requisites:
 One Virtual Machine [OR] One Cloud Instance. Preferably any UBUNTU machine
 
@@ -62,10 +65,27 @@ The developed automated scripts in "github" will work on any Virtual Machine(Ubu
 3. RUN the below command(s) on the terminal of the server, to LAUNCH the odoo applicaton as per the requirement.
 	
 		cd /apps/odoo-postgres-app
-		./install-everything.sh
+		./install-everything.sh       / * This is the DRIVER script which triggers all other scripts */
 4. Finally, LAUNCH any web browser(IE, Chrome, Firefox etc) with VirtualMachine IP address(REVERSE-PROXY: without portno: in the url) as url below.
 	
 		http://<VirtualMachine IP Address>
 		example: http://192.168.56.101
 
 ###### NOTE: Make sure, your docker network gateway is same nginx conf files. 
+
+#### Script/Code file definitions:
+1. The below Playbook(YAML) will install docker and docker-compose on the server.
+         	
+		docker-install-playbook.yml
+2. The below docker-compose file will create 3-odoo & 2-postgress containers with postgress one as main and the other as stand-by
+		
+		docker-compose.yml
+3. This Playbook will install NGINX and also do the configuration for REVERSE-PROXY by enabling the our customized configuration files.
+	
+		nginx-reverse-proxy-playbook.yml
+		
+		Config Files:
+			ngnx-reverse-proxy-conf-files/odoo-app-1.conf
+			ngnx-reverse-proxy-conf-files/odoo-app-2.conf
+			ngnx-reverse-proxy-conf-files/odoo-app-3.conf
+		
