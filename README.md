@@ -1,9 +1,9 @@
 # odoo-postgres-app
 
-#Requirement:
+# Requirement:
 Need to setup odoo application with postgres database on multiple odoo web(3 containers) and database(2 containers) with replication. Also, These web-containers has to be exposed through Nginx reverse-proxy.
 
-##Pre-requisites:
+## Pre-requisites:
 One Virtual Machine [OR] One Cloud Instance. Preferbely any UBUNTU machine
 
 ##Platform:
