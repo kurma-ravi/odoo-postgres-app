@@ -1,0 +1,70 @@
+
+version: '2'
+services:
+  web:
+    image: odoo:12.0
+    depends_on:
+      - db
+    ports:
+      - "8069:8069"
+    volumes:
+      - odoo-web-data:/var/lib/odoo
+      - ./config:/etc/odoo
+      - ./addons:/mnt/extra-addons
+    container_name: odoo
+
+  web-2:
+    image: odoo:12.0
+    depends_on:
+      - db
+    ports:
+      - "8070:8069"
+    volumes:
+      - odoo-web-data:/var/lib/odoo
+      - ./config:/etc/odoo
+      - ./addons:/mnt/extra-addons
+    container_name: odoo2
+
+  web-3:
+    image: odoo:12.0
+    depends_on:
+      - db
+    ports:
+      - "8071:8069"
+    volumes:
+      - odoo-web-data:/var/lib/odoo
+      - ./config:/etc/odoo
+      - ./addons:/mnt/extra-addons
+    container_name: odoo3
+
+  db:
+    image: postgres:10
+    environment:
+      - POSTGRES_REPLICATION_MODE=master
+      - POSTGRES_REPLICATION_USER=repl_user
+      - POSTGRES_REPLICATION_PASSWORD=repl_password
+      - POSTGRES_DB=postgres
+      - POSTGRES_PASSWORD=odoo
+      - POSTGRES_USER=odoo
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - odoo-db-data:/var/lib/postgresql/data/pgdata
+    container_name: db
+
+  odoo-slave:
+    image: postgres:10
+    depends_on:
+      - db
+    environment:
+      - POSTGRES_REPLICATION_MODE=slave
+      - POSTGRES_REPLICATION_USER=repl_user
+      - POSTGRES_REPLICATION_PASSWORD=repl_password
+      - POSTGRES_MASTER_HOST=db
+      - POSTGRES_PASSWORD=odoo
+      - POSTGRES_MASTER_PORT_NUMBER=5432
+      - ALLOW_EMPTY_PASSWORD=yes
+      - PGDATA=/var/lib/postgresql/data/pgdata
+
+volumes:
+  odoo-db-data:
+  odoo-web-data:

@@ -1,0 +1,31 @@
+---
+  - name: "Install NGINX & Setup Reverse-Proxy"
+    hosts: local
+    tasks:
+      - name: Install nginx
+        apt: name=nginx state=present
+      - name: Nginx sites-available files
+        copy:
+          src: /apps/odoo-postgres-app/ngnx-reverse-proxy-conf-files/
+          dest: /etc/nginx/sites-available/
+          mode: '0755'
+      - name: create symlink
+        file:
+          src: "/etc/nginx/sites-available/{{item}}"
+          dest: "/etc/nginx/sites-enabled/{{item}}"
+          owner: root
+          group: root
+          mode: '0755'
+          state: link
+        with_items:
+          - odoo-app-1.conf
+          - odoo-app-2.conf
+          - odoo-app-3.conf
+      - name: Remove default file
+        file:
+          path: /etc/nginx/sites-enabled/default
+          state: absent
+      - name: restart nginx
+        service:
+          name: nginx
+          state: restarted
