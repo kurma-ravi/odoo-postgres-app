@@ -34,9 +34,9 @@ The developed automated scripts in "github" will work on any Virtual Machine(Ubu
 ## Odoo Application Setup Steps:
 1. Login to your VM/Cloud Instance.
      
-     	1.1. Vagrant Box login Credentials, if logging in with Virtual box: root/vagran.
+     	1.1. Vagrant Box login Credentials, if logging in with Virtual box: ### root/vagrant.
      
-     	1.2. Vagrant Box login command, if logging in using localmachine Commandprompt: vagranth ssh
+     	1.2. Vagrant Box login command, if logging in using localmachine Commandprompt: ### vagrant ssh
 
 2. Once, you login to the VM, RUN the below commands on the terminal of the server to do the INITIAL-SETUP:
 
@@ -56,6 +56,6 @@ The developed automated scripts in "github" will work on any Virtual Machine(Ubu
 		./install-everything.sh
 4. Finally, Launch any web browser(IE, Chrome, Firefox etc) with VirtualMachine IP address(REVERSE-PROXY:without portno: in the url) as url below.
 	
-		##### http://<VirtualMachine IP Address>
+		http://<VirtualMachine IP Address>
 
 ###### NOTE: Make sure, your docker network gateway is same nginx conf files. 
